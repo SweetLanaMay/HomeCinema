@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import axios from 'axios';
 import css from './Movies.module.css';
 
@@ -7,9 +7,6 @@ const Movies = () => {
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
-
-  const location = useLocation();
-  const movieId = new URLSearchParams(location.search).get('movieId');
 
   useEffect(() => {
     if (query.trim() === '') {

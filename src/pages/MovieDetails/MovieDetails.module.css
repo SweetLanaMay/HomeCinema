@@ -1,0 +1,50 @@
+.movieInfo {
+    display: flex;
+    gap: 20px;
+}
+
+.movieImage {
+    width: 250px;
+    height: auto;
+}
+
+.userScore {
+font-weight: 500;
+font-size: 16px;
+}
+
+.userScoreQuery {
+    font-weight: 400;
+}
+
+.overview {
+    margin-bottom: 20px;
+}
+
+.overViewText {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.genres {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.genresText {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.addInfo {
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    height: 30px;
+    border: 1px solid #d6d2d2;
+    padding: 8px;
+    align-items: center;
+    box-shadow: 1px 1px 2px #e3e0e0;
+}
+

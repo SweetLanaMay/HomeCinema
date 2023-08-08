@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import css from './Cast.module.css';
 
 const Cast = () => {
@@ -48,4 +49,9 @@ const Cast = () => {
     </div>
   );
 };
+
+Cast.propTypes = {
+  movieId: PropTypes.string,
+};
+
 export default Cast;

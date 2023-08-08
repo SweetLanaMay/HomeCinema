@@ -1,5 +1,23 @@
+import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './Layout.module.css';
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+  color: black;
+  display: inline-block;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+  &.active {
+    color: #ff4500;
+    text-decoration: underline;
+  }
+`;
 
 const Layout = () => {
   return (
@@ -7,28 +25,18 @@ const Layout = () => {
       <header className={css.header}>
         <ul className={css.linkList}>
           <li className={css.linkItem}>
-            <NavLink
-              to="/"
-              className={css.headerLink}
-              activeclassname={css.active}
-            >
-              Home
-            </NavLink>
+            <StyledLink to="/">Home</StyledLink>
           </li>
           <li className={css.linkItem}>
-            <NavLink
-              to="/movies"
-              className={css.headerLink}
-              activeclassname={css.active}
-            >
-              Movies
-            </NavLink>
+            <StyledLink to="/movies">Movies</StyledLink>
           </li>
         </ul>
       </header>
 
       <main>
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </main>
     </div>
   );

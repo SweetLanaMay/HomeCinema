@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import css from './Movies.module.css';
 
 const Movies = () => {
-  const [query, setQuery] = useState('');
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
+  const movieId = searchParams.get('movieId') ?? '';
 
   useEffect(() => {
-    if (query.trim() === '') {
+    if (movieId.trim() === '') {
       setMovies([]);
       return;
     }
@@ -21,7 +23,7 @@ const Movies = () => {
 
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`
+          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieId}`
         );
 
         const newMovies = response.data.results;
@@ -35,10 +37,16 @@ const Movies = () => {
     };
 
     fetchMovieList();
-  }, [query]);
+  }, [movieId]);
 
-  const handleInputChange = event => {
-    setQuery(event.target.value);
+  const updateQueryString = event => {
+    const value = event.target.value;
+
+    if (value === '') {
+      setSearchParams({});
+    } else {
+      setSearchParams({ movieId: value });
+    }
   };
 
   return (
@@ -49,8 +57,8 @@ const Movies = () => {
         autoComplete="off"
         autoFocus
         placeholder="Search movie"
-        value={query}
-        onChange={handleInputChange}
+        value={movieId}
+        onChange={updateQueryString}
       />
       <button type="submit" className={css.searchButton}>
         <span className={css.buttonLabel}>Search</span>
@@ -62,7 +70,9 @@ const Movies = () => {
         <ul>
           {movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+              <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+                {movie.title}
+              </Link>
             </li>
           ))}
         </ul>

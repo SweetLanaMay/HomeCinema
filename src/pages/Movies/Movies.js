@@ -8,36 +8,41 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
-  const movieId = searchParams.get('movieId') ?? '';
+  const query = searchParams.get('query') ?? '';
+
+  const fetchMovieList = async () => {
+    const apiKey = '38a9b8a7f2d4daceaf0a66d3161bb6c0';
+
+    setIsLoading(true);
+
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`
+      );
+
+      const newMovies = response.data.results;
+
+      setMovies(newMovies);
+      setIsLoading(false);
+
+    } catch (error) {
+      console.log('Error:', error.message);
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    if (movieId.trim() === '') {
+    if (!query.trim()) {
       setMovies([]);
       return;
     }
 
-    const fetchMovieList = async () => {
-      const apiKey = '38a9b8a7f2d4daceaf0a66d3161bb6c0';
-
-      setIsLoading(true);
-
-      try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieId}`
-        );
-
-        const newMovies = response.data.results;
-
-        setMovies(newMovies);
-        setIsLoading(false);
-      } catch (error) {
-        console.log('Error:', error.message);
-        setIsLoading(false);
-      }
-    };
-
     fetchMovieList();
-  }, [movieId]);
+  },[]);
+
+  const handleSearch = () => {
+    fetchMovieList();
+  };
 
   const updateQueryString = event => {
     const value = event.target.value;
@@ -45,7 +50,7 @@ const Movies = () => {
     if (value === '') {
       setSearchParams({});
     } else {
-      setSearchParams({ movieId: value });
+      setSearchParams({ query: value });
     }
   };
 
@@ -57,10 +62,10 @@ const Movies = () => {
         autoComplete="off"
         autoFocus
         placeholder="Search movie"
-        value={movieId}
+        value={query}
         onChange={updateQueryString}
       />
-      <button type="submit" className={css.searchButton}>
+      <button type="submit" className={css.searchButton} onClick={handleSearch}>
         <span className={css.buttonLabel}>Search</span>
       </button>
 

@@ -38,6 +38,7 @@ const Movies = () => {
     }
 
     fetchMovieList();
+    // eslint-disable-next-line
   }, []);
 
   const handleSearch = () => {

@@ -38,7 +38,7 @@ const Movies = () => {
     }
 
     fetchMovieList();
-  },[]);
+  }, []);
 
   const handleSearch = () => {
     fetchMovieList();

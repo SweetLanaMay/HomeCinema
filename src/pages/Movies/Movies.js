@@ -41,7 +41,8 @@ const Movies = () => {
     // eslint-disable-next-line
   }, []);
 
-  const handleSearch = () => {
+  const formHandler = event => {
+    event.preventDefault();
     fetchMovieList();
   };
 
@@ -57,6 +58,7 @@ const Movies = () => {
 
   return (
     <>
+    <form  onSubmit={formHandler}className={css.searchForm}>
       <input
         className={css.input}
         type="text"
@@ -66,9 +68,10 @@ const Movies = () => {
         value={query}
         onChange={updateQueryString}
       />
-      <button type="submit" className={css.searchButton} onClick={handleSearch}>
+      <button type="submit" className={css.searchButton}>
         <span className={css.buttonLabel}>Search</span>
       </button>
+      </form>
 
       {isLoading ? (
         <p>Loading...</p>

@@ -21,8 +21,10 @@ const StyledLink = styled(NavLink)`
 
 const Layout = () => {
   return (
+    
     <div className={css.container}>
       <header className={css.header}>
+        <h1 className={css.title}>FilmBox</h1>
         <ul className={css.linkList}>
           <li className={css.linkItem}>
             <StyledLink to="/">Home</StyledLink>

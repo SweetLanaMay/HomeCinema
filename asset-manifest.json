@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/HomeCinema/static/css/main.add06ffd.css",
+    "main.css": "/HomeCinema/static/css/main.f2dd8cd4.css",
     "main.js": "/HomeCinema/static/js/main.0c929e0f.js",
     "static/css/592.6ed1a4a1.chunk.css": "/HomeCinema/static/css/592.6ed1a4a1.chunk.css",
     "static/js/592.0a69d31a.chunk.js": "/HomeCinema/static/js/592.0a69d31a.chunk.js",
@@ -17,7 +17,7 @@
     "static/media/home-background.jpg": "/HomeCinema/static/media/home-background.ae5c1988187d1c898328.jpg",
     "static/media/logo.png": "/HomeCinema/static/media/logo.0962520a4b115ed91c9e.png",
     "index.html": "/HomeCinema/index.html",
-    "main.add06ffd.css.map": "/HomeCinema/static/css/main.add06ffd.css.map",
+    "main.f2dd8cd4.css.map": "/HomeCinema/static/css/main.f2dd8cd4.css.map",
     "main.0c929e0f.js.map": "/HomeCinema/static/js/main.0c929e0f.js.map",
     "592.6ed1a4a1.chunk.css.map": "/HomeCinema/static/css/592.6ed1a4a1.chunk.css.map",
     "592.0a69d31a.chunk.js.map": "/HomeCinema/static/js/592.0a69d31a.chunk.js.map",
@@ -32,7 +32,7 @@
     "279.31e0d11f.chunk.js.map": "/HomeCinema/static/js/279.31e0d11f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.add06ffd.css",
+    "static/css/main.f2dd8cd4.css",
     "static/js/main.0c929e0f.js"
   ]
 }

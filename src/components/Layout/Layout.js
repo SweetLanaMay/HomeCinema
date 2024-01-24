@@ -2,14 +2,15 @@ import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './Layout.module.css';
 import styled from 'styled-components';
+import logoImg from '../../images/logo.png';
 
 const StyledLink = styled(NavLink)`
   color: black;
   display: inline-block;
   margin-right: 20px;
   text-decoration: none;
-  color: #333;
-  font-size: 18px;
+  color: white;
+  font-size: 24px;
   font-weight: bold;
   transition: color 0.3s ease;
 
@@ -24,7 +25,11 @@ const Layout = () => {
     
     <div className={css.container}>
       <header className={css.header}>
-        <h1 className={css.title}>FilmBox</h1>
+      <a href="/HomeCinema" className={css.logoContainer}>
+        <img src={logoImg} alt="HomeCinema Logo" className={css.logo} />
+        <h1 className={css.title}>HomeCinema</h1>
+      </a>
+
         <ul className={css.linkList}>
           <li className={css.linkItem}>
             <StyledLink to="/">Home</StyledLink>

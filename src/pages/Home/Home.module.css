@@ -1,0 +1,37 @@
+.homeContainer{
+    background-image: url('/public/home-background.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    box-shadow: 2px 3px 4px #4f4e4e;
+    padding: 10px 20px;
+}
+
+.homeTitle{
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.movieList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+    list-style: disc;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.movieItem{
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.movieItem:hover,
+.movieItem:focus{
+    color: #ff4500;
+    font-size: 1.05em;
+}

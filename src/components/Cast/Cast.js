@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import css from './Cast.module.css';
+import defaultImg from '../../images/anonymous_avatars_grey_circles.jpg';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -26,8 +27,8 @@ const Cast = () => {
     fetchCastInfo();
   }, [movieId]);
   return (
-    <div>
-      <h2>Cast</h2>
+    <div className={css.castContainer}>
+      <h2 className={css.castTitle}>Cast</h2>
       <ul className={css.castList}>
         {cast.map(actor => (
           <li key={actor.id} className={css.castItem}>
@@ -39,10 +40,17 @@ const Cast = () => {
                 className={css.castImage}
               />
             ) : (
-              <p>No profile available</p>
+              <img
+                src={defaultImg}
+                alt="Actor profile"
+                className={css.defaultImg}
+              />
             )}
 
-            <p className={css.characterName}>Character: {actor.character}</p>
+            <p className={css.character}>
+              Character:{' '}
+              <span className={css.characterName}>{actor.character}</span>
+            </p>
           </li>
         ))}
       </ul>

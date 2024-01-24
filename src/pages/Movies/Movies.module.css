@@ -1,33 +1,66 @@
+.searchForm{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 .input {
-    width: 200px;
-    height: 30px;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    margin-left: 15px;
-    margin-right: 15px;
+    width: 400px;
+    height: 50px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
 }
 .input:hover,
-.input:focus {
+.input:focus,
+.input:active {
+    outline: none;
+    border: 2px solid #ff4500;
     box-shadow: 2px 2px 4px #8c8a8a;
 }
 
 .searchButton {
     display: inline-block;
-    width: 70px;
-    height: 20px;
-    border-radius: 3px;
-    border: 1px solid #000000;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    background-color: #d1cecb;
-    box-shadow: 2px 2px 3px #cfcccc;
+    width: 110px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #131313;
+    
 }
 
 .searchButton:hover,
 .searchButton:focus {
-    background-color: #2929f5;
+    background-color: #ff4500;
+    color: #5c5959;
+    box-shadow: 2px 2px 3px #cfcccc;
+}
+
+.movieList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+    list-style: disc;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.movieItem{
     color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.movieItem:hover,
+.movieItem:focus{
+    color: #ff4500;
+    font-size: 1.05em;
 }

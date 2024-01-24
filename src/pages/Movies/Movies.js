@@ -64,7 +64,7 @@ const Movies = () => {
         type="text"
         autoComplete="off"
         autoFocus
-        placeholder="Search movie"
+        placeholder="Enter movie name"
         value={query}
         onChange={updateQueryString}
       />
@@ -76,9 +76,9 @@ const Movies = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+        <ul className={css.movieList}>
           {movies.map(movie => (
-            <li key={movie.id}>
+            <li key={movie.id} className={css.movieItem}>
               <Link to={`/movies/${movie.id}`} state={{ from: location }}>
                 {movie.title}
               </Link>

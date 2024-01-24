@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className={css.homeContainer}>
       <h1 className={css.homeTitle}>Trending today</h1>
       <ul className={css.movieList}>
         {movies.map(movie => (
@@ -38,7 +38,7 @@ const Home = () => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

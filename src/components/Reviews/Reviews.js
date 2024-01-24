@@ -25,16 +25,16 @@ const Reviews = () => {
     fetchMovieReviews();
   }, [movieId]);
   return (
-    <div>
-      <h2>Reviews</h2>
+    <div className={css.reviewsContainer}>
+      <h2 className={css.reviewsTitle}>Reviews</h2>
       {reviews.length === 0 ? (
-        <p>No reviews found for this movie.</p>
+        <p className={css.reviewsText}>No reviews found for this movie.</p>
       ) : (
-        <ul>
+        <ul className={css.reviewsList}>
           {reviews.map(review => (
-            <li key={review.id}>
-              <h3 className={css.reviewAuthor}>{review.author}</h3>
-              <p>{review.content}</p>
+            <li key={review.id} className={css.reviewsItem}>
+              <h3 className={css.reviewsAuthor}>{review.author}</h3>
+              <p className={css.reviewsContent}>{review.content}</p>
             </li>
           ))}
         </ul>

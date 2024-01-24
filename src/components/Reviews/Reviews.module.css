@@ -1,0 +1,23 @@
+.reviewsTitle{
+    text-align: center;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+.reviewsItem{
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.reviewsAuthor {
+    margin-bottom: 10px;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.reviewsContent{
+    color: #bbb3b0;
+}

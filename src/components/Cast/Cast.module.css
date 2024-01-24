@@ -1,9 +1,48 @@
+.castTitle{
+    text-align: center;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+.castList{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    column-gap: 10px;
+}
+
+.castItem{
+    width: 250px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+}
+
 .actorName {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .castImage {
-    width: 200px;
+    width: 230px;
     height: auto;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.defaultImg{
+    width: 230px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.character{
+    color: #ff4500;
+}
+
+.characterName{
+    color: #bbb3b0;
 }
